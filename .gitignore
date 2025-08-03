@@ -1,0 +1,15 @@
+/public/build/
+/writable/cache/*
+/writable/debugbar/*
+/writable/logs/*
+/writable/session/*
+/writable/uploads/*
+.env
+vendor/
+node_modules/
+*.log
+*.lock
+*.sublime-project
+*.sublime-workspace
+.idea/
+.DS_Store

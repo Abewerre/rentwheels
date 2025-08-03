@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rent Wheels - Kelola customer</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/form_mobil.css" rel="stylesheet">
+    <link href="css/dashboard-style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - User Information -->
+                       
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page header -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 text-gray-800">Form Tambah Customer</h1>
+                        <a href="costumer.php" class="btn btn-primary">
+                            <i class="fas fa-arrow-left fa-sm mr-2"></i>Kembali
+                        </a>
+                    </div>
+
+                    <!-- Form Card -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Data Customer</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="tambah_cos.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="id_customer" class="font-weight-bold">ID Customer:</label>
+                                            <input type="text" id="id_customer" name="id_customer" class="form-control" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="nama_customer" class="font-weight-bold">Nama Customer:</label>
+                                            <input type="text" id="nama_customer" name="nama_customer" class="form-control" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="gender" class="font-weight-bold">Gender:</label>
+                                            <select id="gender" name="gender" class="form-control custom-select" required>
+                                                <option value="">Pilih Gender</option>
+                                                <option value="Laki-laki">Laki-laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="no_telpon" class="font-weight-bold">No Telpon:</label>
+                                            <input type="text" id="no_telpon" name="no_telpon" class="form-control" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="alamat" class="font-weight-bold">Alamat:</label>
+                                            <textarea id="alamat" name="alamat" class="form-control" rows="4" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 text-right">
+                                    <button type="reset" class="btn btn-secondary mr-2">
+                                        <i class="fas fa-undo fa-sm mr-2"></i>Reset
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-save fa-sm mr-2"></i>Simpan
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Validation Scripts -->
+                <script>
+                function validateForm() {
+                    var idCustomer = document.getElementById("id_customer").value;
+                    var namaCustomer = document.getElementById("nama_customer").value;
+                    var noTelpon = document.getElementById("no_telpon").value;
+                    var alamat = document.getElementById("alamat").value;
+                    var gender = document.getElementById("gender").value;
+
+                    // Validasi ID Customer
+                    if (!idCustomer) {
+                        showError("ID Customer tidak boleh kosong");
+                        return false;
+                    }
+                    if (!/^\d+$/.test(idCustomer)) {
+                        showError("ID Customer harus berupa angka");
+                        return false;
+                    }
+
+                    // Validasi Nama
+                    if (!namaCustomer) {
+                        showError("Nama Customer tidak boleh kosong");
+                        return false;
+                    }
+                    if (/^\d+$/.test(namaCustomer)) {
+                        showError("Nama Customer tidak boleh berupa angka");
+                        return false;
+                    }
+
+                    // Validasi Gender
+                    if (!gender) {
+                        showError("Silakan pilih Gender");
+                        return false;
+                    }
+
+                    // Validasi No Telpon
+                    if (!noTelpon) {
+                        showError("No Telpon tidak boleh kosong");
+                        return false;
+                    }
+                    if (!/^\d+$/.test(noTelpon)) {
+                        showError("No Telpon harus berupa angka");
+                        return false;
+                    }
+                    if (noTelpon.length < 10 || noTelpon.length > 13) {
+                        showError("No Telpon harus 10-13 digit");
+                        return false;
+                    }
+
+                    // Validasi Alamat
+                    if (!alamat) {
+                        showError("Alamat tidak boleh kosong");
+                        return false;
+                    }
+
+                    return true;
+                }
+
+                function showError(message) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: message
+                    });
+                }
+                </script>
+
+                <!-- Sweet Alert -->
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,16 +1,13 @@
 <?php
-$servername = "localhost";
+$servername = "mysql.railway.internal";
 $username = "root";
-$password = "";
-$dbname = "rental";
+$password = "kHDFoQjViwGzGDwRXQgPLGbiKGJURBaI";
+$dbname = "railway";
+$port = 3306;
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-// Matikan strict mode dan ONLY_FULL_GROUP_BY
-mysqli_query($conn, "SET GLOBAL sql_mode=''");
-mysqli_query($conn, "SET SESSION sql_mode=''");
-
+?>
